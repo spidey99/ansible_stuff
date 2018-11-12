@@ -1,0 +1,10 @@
+- name: Remove VM
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Create resource group
+    azure_rm_resourcegroup:
+      name: table2rjvmrg
+      location: westcentralus
+      state: absent
+      force: true
