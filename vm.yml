@@ -1,10 +1,12 @@
 - name: Create VM
   hosts: localhost
   connection: local
+  vars:
+    rg_name: table2jvmrg
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
-      name: table2rjvmrg
+      name: "{{ rg_name }}"
       location: westcentralus
   - name: Create virtual network
     azure_rm_virtualnetwork:
@@ -55,7 +57,7 @@
       ssh_public_keys:
         - path: /home/azureops/.ssh/authorized_keys
           key_data: |
-            {{ lookup('file','home/azureops/.ssh/id_rsa.pub')}}
+            {{ lookup('file','/home/azureops/.ssh/id_rsa.pub') }}
       network_interfaces: table2rjnic
       image:
         offer: UbuntuServer
