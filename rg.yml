@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create a resource
+      azure_rm_resourcegroup:
+        name: table2rjansibletest
+        location: westcentralus
+        tags:
+          testing: testing
+          delete: never
