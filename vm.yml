@@ -14,7 +14,7 @@
   - name: Add subnet
     azure_rm_subnet:
       resource_group: table2rjvmrg
-      name: table2jksubnet
+      name: table2rjsubnet
       address_prefix: "10.0.1.0/24"
       virtual_network: table2rjvnet
   - name: Create public IP address
@@ -48,7 +48,7 @@
   - name: Create VM
     azure_rm_virtualmachine:
       resource_group: table2rjvmrg
-      name: tabl2rjvm
+      name: table2rjvm
       vm_size: Standard_DS1_v2
       admin_username: azureops
       ssh_password_enabled: false
