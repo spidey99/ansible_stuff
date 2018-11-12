@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   vars:
-    rg_name: table2jvmrg
+    rg_name: table2rjvmrg
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
@@ -10,7 +10,7 @@
       location: westcentralus
   - name: Create virtual network
     azure_rm_virtualnetwork:
-      resource_group: table2rjvmrg
+      resource_group: "{{ rg_name }}"
       name: table2rjvnet
       address_prefixes: "10.0.0.0/16"
   - name: Add subnet
