@@ -4,7 +4,7 @@
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
-      name: table2rjvmrg
+      name: table2jvmrg
       location: westcentralus
       state: absent
       force: true
