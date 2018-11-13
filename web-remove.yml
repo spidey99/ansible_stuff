@@ -1,0 +1,11 @@
+- hosts: localhost
+  connection: local
+  vars:
+    group: table2rjwebapprg
+    webapp_name: table2rjwebapp
+    location: southcentralus
+  tasks:
+    - name: create rg
+      azure-rm-resourcegroup:
+        name: "{{group}}"
+        location: "{{location}}"
