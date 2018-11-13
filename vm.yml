@@ -1,4 +1,4 @@
-me: Create  VM
+- name: Create  VM
   hosts: localhost
   connection: local
   vars_files:
