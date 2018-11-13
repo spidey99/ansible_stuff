@@ -1,10 +1,11 @@
-- name: Remove VM
-  hosts: localhost
+---
+- hosts: localhost
   connection: local
+  vars_files:
+    - vars.yml
   tasks:
-  - name: Create resource group
-    azure_rm_resourcegroup:
-      name: table2rjvmrg
-      location: westcentralus
-      state: absent
-      force: true
+    - name: Delete resource group
+      azure_rm_resourcegroup:
+        name: "{{group_name}}"
+        state: absent
+        force: true
